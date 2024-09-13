@@ -23,6 +23,7 @@ schemas act as DTO, handles serialization between controller and models (tables)
 crud file contains all the crud methods in and out the db
 service file handles all the business logic, including invoking the weather api
 routers handles http requests and responses, as well as orchestrating services
+unit tests are placed in their own folder, one unit test file per crud, service and controller
 
 main is the app's entry point
 
@@ -56,4 +57,4 @@ We can make this better by using a credential manager, I've used Azure Key Vault
 
 ## More Error Handling
 1. when 3rd party API is involved, it is important to implemented rollback mechanism similar to what's being used in distributed system
-
+2. need to add more unit testings but out of time
