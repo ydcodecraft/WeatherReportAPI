@@ -53,3 +53,7 @@ fastapi already spits out swagger doc so it's very easy to generate by hand usin
 3. credential manager, in this localhost exercise, I added my secret in env file, which is only half of what production should look like. 
 We can make this better by using a credential manager, I've used Azure Key Vault, Azure Library, we can also do google secret manager, and retrieve the secret as a part of the deployment pipeline, this way secrets would be not be shared in any way during deployment
 
+
+## More Error Handling
+1. when 3rd party API is involved, it is important to implemented rollback mechanism similar to what's being used in distributed system
+
