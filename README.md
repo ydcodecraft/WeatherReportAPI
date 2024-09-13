@@ -1,3 +1,7 @@
+# Getting Started!
+git clone everything
+docker-compose up --build
+
 # Schemas
 ## City
 id - auto generated int
