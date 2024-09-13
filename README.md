@@ -1,34 +1,34 @@
 # Getting Started!
-git clone everything
-in app/.env, put in the openweathermap api key
-docker-compose up --build
-in browser, follow http://127.0.0.1:8000/docs# to see swagger doc
+git clone everything<br/>
+in app/.env, put in the openweathermap api key<br/>
+docker-compose up --build<br/>
+in browser, follow http://127.0.0.1:8000/docs# to see swagger doc<br/>
 
 # Schemas
 ## City
-id - auto generated int
+id - auto generated int<br/>
 name - str
 
 ## AccessHistory
-id - auto generated int
-timestamp - datetime, set by db
-city_id - int, foreignkey referencing city 
-status = enum, value can be 'success' or 'failure'
+id - auto generated int<br/>
+timestamp - datetime, set by db<br/>
+city_id - int, foreignkey referencing city <br/>
+status = enum, value can be 'success' or 'failure'<br/>
 
 
 # Structure
-using a typical fast api approach with basic 3 tier application architecture without the presentation layer
-database handles db connection
-declared models using sqlalchemy, containing the 2 tables needed
-schemas act as DTO, handles serialization between controller and models (tables)
-crud file contains all the crud methods in and out the db
-service file handles all the business logic, including invoking the weather api
-routers handles http requests and responses, as well as orchestrating services
-unit tests are placed in their own folder, one unit test file per crud, service and controller
-
-main is the app's entry point
-
-this project uses alembic for migrations, alembic.ini doesn't contains the db connection string, they are configured in alembiuc/env.py
+using a typical fast api approach with basic 3 tier application architecture without the presentation layer<br/>
+database handles db connection<br/>
+declared models using sqlalchemy, containing the 2 tables needed<br/>
+schemas act as DTO, handles serialization between controller and models (tables)<br/>
+crud file contains all the crud methods in and out the db<br/>
+service file handles all the business logic, including invoking the weather api<br/>
+routers handles http requests and responses, as well as orchestrating services<br/>
+unit tests are placed in their own folder, one unit test file per crud, service and controller<br/>
+<br/>
+main is the app's entry point<br/>
+<br/>
+this project uses alembic for migrations, alembic.ini doesn't contains the db connection string, they are configured in alembiuc/env.py<br/>
 
 
 ## architecture trade-offs:
