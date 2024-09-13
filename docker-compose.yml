@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: service
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: weatherApi
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+    networks:
+      - app-network
+
+  fastapi:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      PYTHONPATH: /code/app
+      DATABASE_URL: postgresql://service:1234@postgres/weatherApi
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - app-network
+    command: >
+      bash -c "alembic upgrade head && fastapi run ./app/main.py --port 8000"
+          
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

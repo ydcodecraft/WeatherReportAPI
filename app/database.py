@@ -5,8 +5,8 @@ from sqlalchemy.orm import sessionmaker
 import os
 
 # hard coded for initial testing, using env variables for all hosted environments
-SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1234@localhost/WeatherReportAPI"
-# SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+# SQLALCHEMY_DATABASE_URL = "postgresql://postgres:1234@localhost/WeatherReportAPI"
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 if SQLALCHEMY_DATABASE_URL is None:
     raise Exception("Cannot find a valid database url in the configuration file")
 

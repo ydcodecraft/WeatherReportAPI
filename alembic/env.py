@@ -10,8 +10,8 @@ import os
 # access to the values within the .ini file in use.
 config = context.config
 
-DATABASE_URL = "postgresql://postgres:1234@localhost/WeatherReportAPI"
-# DATABASE_URL = os.getenv("DATABASE_URL")
+# DATABASE_URL = "postgresql://postgres:1234@localhost/WeatherReportAPI"
+DATABASE_URL = os.getenv("DATABASE_URL")
 if DATABASE_URL is None:
     raise Exception("Cannot find a valid database url in the configuration file")
 
