@@ -1,5 +1,6 @@
 # Getting Started!
 git clone everything
+in app/.env, put in the openweathermap api key
 docker-compose up --build
 in browser, follow http://127.0.0.1:8000/docs# to see swagger doc
 
